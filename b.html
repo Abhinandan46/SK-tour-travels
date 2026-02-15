@@ -3,11 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="theme-color" content="#f97316">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SK TOUR TRAVELSS - Premium Car Services</title>
 
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin=""></script>
@@ -155,135 +151,6 @@
             filter: brightness(1) contrast(1) saturate(1) !important;
             mix-blend-mode: normal !important;
         }
-
-        /* Mobile-first optimizations */
-        /* Production-ready mobile fixes */
-        @media (max-width: 768px) {
-            .animate-float {
-                animation: mobileFloat 4s ease-in-out infinite;
-            }
-            
-            @keyframes mobileFloat {
-                0%, 100% { transform: translateY(0px) scale(1); }
-                50% { transform: translateY(-8px) scale(1.02); }
-            }
-
-            /* Brand name mobile fix - production ready */
-            .mobile-brand-name {
-                flex-shrink: 0 !important;
-                white-space: nowrap !important;
-                font-size: clamp(0.75rem, 3.5vw, 1rem) !important;
-                line-height: 1.2 !important;
-                overflow: visible !important;
-                text-overflow: clip !important;
-                max-width: none !important;
-                min-width: max-content !important;
-            }
-            
-            /* Navigation container flex fix */
-            .nav-container {
-                padding-left: max(8px, env(safe-area-inset-left)) !important;
-                padding-right: max(8px, env(safe-area-inset-right)) !important;
-                overflow: visible !important;
-            }
-            
-            /* Logo container - never shrink */
-            .nav-container > div:first-child {
-                flex-shrink: 0 !important;
-                min-width: max-content !important;
-            }
-            
-            /* WhatsApp button positioning fix */
-            .floating-whatsapp {
-                bottom: max(20px, env(safe-area-inset-bottom, 20px)) !important;
-                right: max(16px, env(safe-area-inset-right, 16px)) !important;
-            }
-        }
-
-        /* Small mobile devices */
-        @media (max-width: 480px) {
-            .nav-container {
-                padding-left: max(4px, env(safe-area-inset-left)) !important;
-                padding-right: max(4px, env(safe-area-inset-right)) !important;
-            }
-            
-            .floating-whatsapp {
-                bottom: max(16px, env(safe-area-inset-bottom, 16px)) !important;
-                right: max(12px, env(safe-area-inset-right, 12px)) !important;
-            }
-        }
-
-        /* Extra small screens */
-        @media (max-width: 360px) {
-            .floating-whatsapp {
-                bottom: max(14px, env(safe-area-inset-bottom, 14px)) !important;
-                right: max(10px, env(safe-area-inset-right, 10px)) !important;
-            }
-        }
-            
-
-        /* Floating WhatsApp button */
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 1000;
-            background: #25D366;
-            border-radius: 50%;
-            width: 64px;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
-            animation: pulse 2s infinite;
-            transition: all 0.3s ease;
-            border: none;
-            outline: none;
-            /* Ensure button stays within viewport */
-            margin: 0;
-            transform-origin: center;
-        }
-
-        .floating-whatsapp:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4);
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3); }
-            50% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5), 0 0 0 12px rgba(37, 211, 102, 0.1); }
-            100% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3); }
-        }
-
-        /* Click-to-call phone numbers */
-        .phone-clickable {
-            transition: all 0.2s ease;
-            user-select: none;
-        }
-
-        .phone-clickable:hover {
-            color: #f97316 !important;
-            transform: scale(1.05);
-        }
-
-        .phone-clickable:active {
-            transform: scale(0.98);
-        }
-
-        /* Add touch feedback for mobile */
-        @media (hover: none) and (pointer: coarse) {
-            .phone-clickable:hover {
-                transform: none;
-            }
-            
-            .phone-clickable:active {
-                background-color: rgba(249, 115, 22, 0.1);
-                border-radius: 8px;
-                padding: 4px;
-                margin: -4px;
-            }
-        }
     </style>
 </head>
 
@@ -291,12 +158,12 @@
 
     <div id="root" class="">
         <div class="flex flex-col min-h-screen">
-            <nav class="fixed top-0 inset-x-0 z-50 transition-all duration-300 glass" style="min-height: 4rem; height: auto;">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 min-h-16 flex items-center justify-between nav-container" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
-                    <div class="flex items-center gap-2 cursor-pointer flex-shrink-0" style="min-width: max-content; max-width: 50vw;">
-                        <div class="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center text-white flex-shrink-0">
+            <nav class="fixed top-0 inset-x-0 z-50 transition-all duration-300 glass h-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between">
+                    <div class="flex items-center gap-2 cursor-pointer">
+                        <div class="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center text-white">
                             <iconify-icon icon="solar:wheel-angle-bold-duotone" width="20"></iconify-icon>
-                        </div><span class="text-xl font-bold tracking-tighter text-white mobile-brand-name" style="overflow: visible; line-height: 1.1;">SK TOUR<span
+                        </div><span class="text-xl font-bold tracking-tighter text-white">SK TOUR<span
                                 class="text-gray-500">
                                 TRAVELSS</span></span>
                     </div>
@@ -308,14 +175,13 @@
                             class="px-5 py-1.5 rounded-full text-sm font-medium transition-all text-gray-400 hover:text-white">Booking</button><button
                             class="px-5 py-1.5 rounded-full text-sm font-medium transition-all text-gray-400 hover:text-white">Contact</button>
                     </div>
-                    <button onclick="window.open('https://wa.me/919805018034', '_blank')" class="md:hidden text-white p-2.5 hover:text-brand-500 transition-colors rounded-lg hover:bg-white/5">
-                        <iconify-icon icon="solar:phone-calling-rounded-bold" width="22"></iconify-icon>
-                    </button>
-                </div>
+                </div><button
+                        class="md:hidden text-white p-2"><iconify-icon icon="solar:hamburger-menu-linear"
+                            width="24"></iconify-icon></button>
                 </div>
             </nav>
             <main class="flex-grow">
-                <div class="relative min-h-[calc(100svh-4rem)] flex items-start mt-16 pb-8 sm:pb-12">
+                <div class="relative min-h-[100vh] sm:min-h-[90vh] flex items-center pt-16 sm:pt-20 overflow-hidden">
                     <div class="absolute inset-0 z-0"><img
                             src="https://images.unsplash.com/photo-1603584173870-7b2310d65bbc?q=80&w=2000&auto=format&fit=crop"
                             class="w-full h-full object-cover opacity-20">
@@ -325,52 +191,47 @@
                     
                     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
                         <!-- Mobile Layout -->
-                        <div class="lg:hidden text-center space-y-8 sm:space-y-10 pt-6 sm:pt-8">
-                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-sm font-semibold tracking-wide uppercase">
+                        <div class="lg:hidden text-center space-y-6 sm:space-y-8">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-xs font-semibold tracking-wide uppercase">
                                 <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>24×7 Services Available
                             </div>
                             
-                            <h1 class="text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight leading-[0.9] px-4">
+                            <h1 class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight leading-[0.95] px-2">
                                 The Art of <br>
                                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-500 to-white">Travel</span><br>Excellence.
                             </h1>
                             
-                            <p class="text-lg sm:text-xl text-gray-300 max-w-lg mx-auto leading-relaxed px-6">
+                            <p class="text-base sm:text-lg text-gray-400 max-w-md mx-auto leading-relaxed font-light px-4">
                                 Premium taxi services in Himachal Pradesh. Airport drops, wedding bookings and luxury rides.
                             </p>
 
                             <!-- Mobile Car Image -->
-                            <div class="my-10 sm:my-14 px-4">
-                                <div class="relative max-w-sm sm:max-w-md mx-auto">
-                                    <div class="absolute inset-0 bg-brand-500/25 blur-[80px] rounded-full"></div>
-                                    <img src="https://res.cloudinary.com/dvexzc7nv/image/upload/v1771143432/ChatGPT_Image_Feb_15_2026_01_46_43_PM_vngkh9.png" alt="Hero Car" class="relative z-10 w-full animate-float drop-shadow-2xl rounded-2xl">
+                            <div class="my-8 sm:my-12 px-4">
+                                <div class="relative max-w-xs sm:max-w-sm mx-auto">
+                                    <div class="absolute inset-0 bg-brand-500/20 blur-[60px] rounded-full"></div>
+                                    <img src="https://pngimg.com/d/porsche_PNG10622.png" alt="Hero Car" class="relative z-10 w-full animate-float drop-shadow-2xl">
                                 </div>
                             </div>
 
-                            <div class="flex flex-col gap-4 justify-center px-6 max-w-sm mx-auto">
+                            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
                                 <button type="button" onclick="window.open('https://wa.me/919805018034', '_blank')"
-                                    class="w-full px-8 py-4 rounded-2xl text-base font-semibold transition-all duration-300 bg-brand-600 hover:bg-brand-500 text-white shadow-[0_0_25px_rgba(234,88,12,0.4)] hover:shadow-[0_0_35px_rgba(234,88,12,0.6)] hover:scale-105">
-                                    <iconify-icon icon="solar:phone-calling-rounded-bold" class="mr-2"></iconify-icon>
-                                    Book Now
+                                    class="px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 bg-brand-600 hover:bg-brand-500 text-white shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:shadow-[0_0_30px_rgba(234,88,12,0.5)]">
+                                    View Services <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
                                 </button>
                                 <button type="button" onclick="window.open('https://wa.me/919805018034', '_blank')"
-                                    class="w-full px-8 py-4 rounded-2xl text-base font-semibold transition-all duration-300 bg-white/10 hover:bg-white/15 text-white border border-white/20 backdrop-blur-sm hover:scale-105">
-                                    <iconify-icon icon="solar:chat-round-dots-bold" class="mr-2"></iconify-icon>
-                                    WhatsApp
+                                    class="px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 bg-white/5 hover:bg-white/10 text-white border border-white/10 backdrop-blur-sm">
+                                    Contact Now
                                 </button>
                             </div>
 
-                            <div class="pt-8 sm:pt-10 border-t border-white/10 mx-6">
-                                <p class="text-sm text-gray-400 mb-4 uppercase tracking-wider font-medium">24/7 Support Available</p>
-                                <div class="grid grid-cols-1 xs:grid-cols-2 gap-4">
-                                    <div class="text-center p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm cursor-pointer hover:bg-white/10 transition-all" onclick="handleCallSupport('primary')">
-                                        <p class="text-2xl sm:text-3xl font-bold text-white mb-1">9805018034</p>
-                                        <p class="text-xs text-gray-400 uppercase tracking-wider">Primary Contact</p>
-                                    </div>
-                                    <div class="text-center p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm cursor-pointer hover:bg-white/10 transition-all" onclick="handleCallSupport('secondary')">
-                                        <p class="text-2xl sm:text-3xl font-bold text-white mb-1">9816284516</p>
-                                        <p class="text-xs text-gray-400 uppercase tracking-wider">Secondary Contact</p>
-                                    </div>
+                            <div class="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center gap-4 sm:gap-8 border-t border-white/5 mx-4">
+                                <div class="text-center sm:text-left">
+                                    <p class="text-xl sm:text-2xl font-bold text-white">9805018034</p>
+                                    <p class="text-xs text-gray-500 uppercase tracking-wider">Primary Contact</p>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <p class="text-xl sm:text-2xl font-bold text-white">9816284516</p>
+                                    <p class="text-xs text-gray-500 uppercase tracking-wider">Secondary Contact</p>
                                 </div>
                             </div>
                         </div>
@@ -399,90 +260,90 @@
                                 </div>
                                 <div class="pt-8 flex items-center gap-8 border-t border-white/5">
                                     <div>
-                                        <p class="text-2xl font-bold text-white cursor-pointer hover:text-brand-500 transition-colors" onclick="handleCallSupport('primary')">9805018034</p>
+                                        <p class="text-2xl font-bold text-white">9805018034</p>
                                         <p class="text-xs text-gray-500 uppercase tracking-wider">Primary Contact</p>
                                     </div>
                                     <div>
-                                        <p class="text-2xl font-bold text-white cursor-pointer hover:text-brand-500 transition-colors" onclick="handleCallSupport('secondary')">9816284516</p>
+                                        <p class="text-2xl font-bold text-white">9816284516</p>
                                         <p class="text-xs text-gray-500 uppercase tracking-wider">Secondary Contact</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="relative">
                                 <div class="absolute inset-0 bg-brand-500/20 blur-[100px] rounded-full"></div><img
-                                    src="https://res.cloudinary.com/dvexzc7nv/image/upload/v1771143432/ChatGPT_Image_Feb_15_2026_01_46_43_PM_vngkh9.png" alt="Hero Car"
+                                    src="https://pngimg.com/d/porsche_PNG10622.png" alt="Hero Car"
                                     class="z-10 animate-float w-full relative drop-shadow-2xl">
                             </div>
                         </div>
                     </div>
                 </div>
-                <section class="py-20 sm:py-24 md:py-28 px-4 bg-dark-900 relative">
+                <section class="py-16 sm:py-20 md:py-24 px-4 bg-dark-900 relative">
                     <div class="max-w-7xl mx-auto">
-                        <div class="text-center mb-16 sm:mb-20">
-                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 px-4 leading-tight">Why Choose <br class="sm:hidden">SK TOUR TRAVELSS?
+                        <div class="text-center mb-12 sm:mb-16">
+                            <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-3 sm:mb-4 px-4">Why Choose SK TOUR TRAVELSS?
                             </h2>
-                            <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-6 leading-relaxed">We redefine the travel experience with
+                            <p class="text-gray-400 max-w-2xl mx-auto px-4 text-sm sm:text-base leading-relaxed">We redefine the travel experience with
                                 professional drivers and 24×7 availability in Panjawar and beyond.</p>
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                             <div
-                                class="bg-dark-800/50 p-8 sm:p-10 rounded-3xl border border-dark-700 hover:border-brand-500/30 transition-all hover:bg-dark-800 group hover:scale-105">
+                                class="bg-dark-800/50 p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-dark-700 hover:border-brand-500/30 transition-all hover:bg-dark-800 group">
                                 <div
-                                    class="w-14 h-14 sm:w-16 sm:h-16 bg-dark-700 rounded-2xl flex items-center justify-center text-white mb-6 sm:mb-8 group-hover:bg-brand-500 transition-colors">
-                                    <iconify-icon icon="solar:shield-check-linear" width="28" class="sm:w-8 sm:h-8"></iconify-icon>
+                                    class="w-10 h-10 sm:w-12 sm:h-12 bg-dark-700 rounded-xl sm:rounded-2xl flex items-center justify-center text-white mb-4 sm:mb-6 group-hover:bg-brand-500 transition-colors">
+                                    <iconify-icon icon="solar:shield-check-linear" width="20" class="sm:w-6 sm:h-6"></iconify-icon>
                                 </div>
-                                <h3 class="text-xl sm:text-2xl font-semibold text-white mb-4 leading-tight">All Kinds of Cars</h3>
-                                <p class="text-gray-300 text-base sm:text-lg leading-relaxed">A wide range of vehicles available for
+                                <h3 class="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3">All Kinds of Cars</h3>
+                                <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">A wide range of vehicles available for
                                     every need and budget.</p>
                             </div>
                             <div
-                                class="bg-dark-800/50 p-8 sm:p-10 rounded-3xl border border-dark-700 hover:border-brand-500/30 transition-all hover:bg-dark-800 group hover:scale-105">
+                                class="bg-dark-800/50 p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-dark-700 hover:border-brand-500/30 transition-all hover:bg-dark-800 group">
                                 <div
-                                    class="w-14 h-14 sm:w-16 sm:h-16 bg-dark-700 rounded-2xl flex items-center justify-center text-white mb-6 sm:mb-8 group-hover:bg-brand-500 transition-colors">
-                                    <iconify-icon icon="solar:wallet-money-linear" width="28" class="sm:w-8 sm:h-8"></iconify-icon>
+                                    class="w-10 h-10 sm:w-12 sm:h-12 bg-dark-700 rounded-xl sm:rounded-2xl flex items-center justify-center text-white mb-4 sm:mb-6 group-hover:bg-brand-500 transition-colors">
+                                    <iconify-icon icon="solar:wallet-money-linear" width="20" class="sm:w-6 sm:h-6"></iconify-icon>
                                 </div>
-                                <h3 class="text-xl sm:text-2xl font-semibold text-white mb-4 leading-tight">Wedding Bookings</h3>
-                                <p class="text-gray-300 text-base sm:text-lg leading-relaxed">Specialized marriage and wedding car
+                                <h3 class="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3">Wedding Bookings</h3>
+                                <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">Specialized marriage and wedding car
                                     booking services for your big day.</p>
                             </div>
                             <div
-                                class="bg-dark-800/50 p-8 sm:p-10 rounded-3xl border border-dark-700 hover:border-brand-500/30 transition-all hover:bg-dark-800 group hover:scale-105">
+                                class="bg-dark-800/50 p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-dark-700 hover:border-brand-500/30 transition-all hover:bg-dark-800 group">
                                 <div
-                                    class="w-14 h-14 sm:w-16 sm:h-16 bg-dark-700 rounded-2xl flex items-center justify-center text-white mb-6 sm:mb-8 group-hover:bg-brand-500 transition-colors">
-                                    <iconify-icon icon="solar:box-minimalistic-linear" width="28" class="sm:w-8 sm:h-8"></iconify-icon>
+                                    class="w-10 h-10 sm:w-12 sm:h-12 bg-dark-700 rounded-xl sm:rounded-2xl flex items-center justify-center text-white mb-4 sm:mb-6 group-hover:bg-brand-500 transition-colors">
+                                    <iconify-icon icon="solar:box-minimalistic-linear" width="20" class="sm:w-6 sm:h-6"></iconify-icon>
                                 </div>
-                                <h3 class="text-xl sm:text-2xl font-semibold text-white mb-4 leading-tight">Airport Transfers</h3>
-                                <p class="text-gray-300 text-base sm:text-lg leading-relaxed">Punctual airport pickup and drop
+                                <h3 class="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3">Airport Transfers</h3>
+                                <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">Punctual airport pickup and drop
                                     services, operating 24 hours a day.</p>
                             </div>
                         </div>
                     </div>
                 </section>
-                <div class="min-h-screen py-20 sm:py-24 md:py-28 px-4 max-w-7xl mx-auto animate-slide-up">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 sm:mb-16 gap-6 sm:gap-8">
+                <div class="min-h-screen py-16 sm:py-20 md:py-24 px-4 max-w-7xl mx-auto animate-slide-up">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-12 gap-4 sm:gap-6">
                         <div class="text-center md:text-left w-full md:w-auto">
-                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-4 leading-tight">Our Services</h2>
-                            <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">Professional travel solutions for the discerning passenger.</p>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-2">Our Services</h2>
+                            <p class="text-gray-400 text-sm sm:text-base">Professional travel solutions for the discerning passenger.</p>
                         </div>
-                        <div class="flex flex-wrap gap-3 justify-center md:justify-end w-full md:w-auto">
+                        <div class="flex flex-wrap gap-2 justify-center md:justify-end w-full md:w-auto">
                             <div><span
-                                    class="px-4 py-2 rounded-full text-sm font-medium border transition-colors cursor-pointer bg-brand-500 text-white border-brand-500 hover:bg-brand-600">All</span>
+                                    class="px-3 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer bg-brand-500 text-white border-brand-500">All</span>
                             </div>
                             <div><span
-                                    class="px-4 py-2 rounded-full text-sm font-medium border transition-colors cursor-pointer bg-dark-800 text-gray-300 border-dark-700 hover:border-gray-500 hover:text-white">Wedding</span>
+                                    class="px-3 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer bg-dark-800 text-gray-400 border-dark-700 hover:border-gray-500">Wedding</span>
                             </div>
                             <div><span
-                                    class="px-4 py-2 rounded-full text-sm font-medium border transition-colors cursor-pointer bg-dark-800 text-gray-300 border-dark-700 hover:border-gray-500 hover:text-white">Local</span>
+                                    class="px-3 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer bg-dark-800 text-gray-400 border-dark-700 hover:border-gray-500">Local</span>
                             </div>
                             <div><span
-                                    class="px-4 py-2 rounded-full text-sm font-medium border transition-colors cursor-pointer bg-dark-800 text-gray-300 border-dark-700 hover:border-gray-500 hover:text-white">Airport</span>
+                                    class="px-3 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer bg-dark-800 text-gray-400 border-dark-700 hover:border-gray-500">Airport</span>
                             </div>
                             <div><span
-                                    class="px-4 py-2 rounded-full text-sm font-medium border transition-colors cursor-pointer bg-dark-800 text-gray-300 border-dark-700 hover:border-gray-500 hover:text-white">Outstation</span>
+                                    class="px-3 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer bg-dark-800 text-gray-400 border-dark-700 hover:border-gray-500">Outstation</span>
                             </div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 sm:gap-10">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         <div
                             class="card-hover bg-dark-800 border border-dark-700 rounded-2xl overflow-hidden cursor-pointer group relative">
                             <div class="relative overflow-hidden rounded-t-2xl bg-gradient-to-br from-dark-600 to-dark-700 min-h-[200px] flex items-center justify-center">
@@ -495,21 +356,21 @@
                                     class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-dark-700/60 to-transparent pointer-events-none">
                                 </div>
                             </div>
-                            <div class="p-6 relative">
-                                <div class="flex justify-between items-start mb-3">
+                            <div class="p-5 relative">
+                                <div class="flex justify-between items-start mb-2">
                                     <div>
-                                        <p class="text-sm text-brand-500 font-bold uppercase tracking-wider mb-2">Taxi
+                                        <p class="text-xs text-brand-500 font-bold uppercase tracking-wider mb-1">Taxi
                                         </p>
-                                        <h3 class="text-white font-semibold text-lg leading-tight pr-2">Local Taxi Service</h3>
+                                        <h3 class="text-white font-semibold truncate pr-2">Local Taxi Service</h3>
                                     </div>
                                 </div>
-                                <div class="flex items-center justify-between mt-6 pt-4 border-t border-white/10">
-                                    <div class="flex gap-4 text-sm text-gray-400"><span
-                                            class="flex items-center gap-1.5"><iconify-icon
+                                <div class="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
+                                    <div class="flex gap-4 text-xs text-gray-500"><span
+                                            class="flex items-center gap-1"><iconify-icon
                                                 icon="solar:speedometer-linear"></iconify-icon> 24/7</span><span
-                                            class="flex items-center gap-1.5"><iconify-icon
+                                            class="flex items-center gap-1"><iconify-icon
                                                 icon="solar:bolt-linear"></iconify-icon> All Cars</span></div><span
-                                        class="text-white font-bold text-lg">Panjawar</span>
+                                        class="text-white font-bold">Panjawar</span>
                                 </div>
                             </div>
                         </div>
@@ -525,21 +386,21 @@
                                     class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-dark-700/60 to-transparent pointer-events-none">
                                 </div>
                             </div>
-                            <div class="p-6 relative">
-                                <div class="flex justify-between items-start mb-3">
+                            <div class="p-5 relative">
+                                <div class="flex justify-between items-start mb-2">
                                     <div>
-                                        <p class="text-sm text-brand-500 font-bold uppercase tracking-wider mb-2">
+                                        <p class="text-xs text-brand-500 font-bold uppercase tracking-wider mb-1">
                                             Special</p>
-                                        <h3 class="text-white font-semibold text-lg leading-tight pr-2">Wedding Car Booking</h3>
+                                        <h3 class="text-white font-semibold truncate pr-2">Wedding Car Booking</h3>
                                     </div>
                                 </div>
-                                <div class="flex items-center justify-between mt-6 pt-4 border-t border-white/10">
-                                    <div class="flex gap-4 text-sm text-gray-400"><span
-                                            class="flex items-center gap-1.5"><iconify-icon
+                                <div class="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
+                                    <div class="flex gap-4 text-xs text-gray-500"><span
+                                            class="flex items-center gap-1"><iconify-icon
                                                 icon="solar:speedometer-linear"></iconify-icon> Luxury</span><span
-                                            class="flex items-center gap-1.5"><iconify-icon
+                                            class="flex items-center gap-1"><iconify-icon
                                                 icon="solar:bolt-linear"></iconify-icon> Decorated</span></div><span
-                                        class="text-white font-bold text-lg">Marriage</span>
+                                        class="text-white font-bold">Marriage</span>
                                 </div>
                             </div>
                         </div>
@@ -555,21 +416,21 @@
                                     class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-dark-700/60 to-transparent pointer-events-none">
                                 </div>
                             </div>
-                            <div class="p-6 relative">
-                                <div class="flex justify-between items-start mb-3">
+                            <div class="p-5 relative">
+                                <div class="flex justify-between items-start mb-2">
                                     <div>
-                                        <p class="text-sm text-brand-500 font-bold uppercase tracking-wider mb-2">
+                                        <p class="text-xs text-brand-500 font-bold uppercase tracking-wider mb-1">
                                             Airport</p>
-                                        <h3 class="text-white font-semibold text-lg leading-tight pr-2">Airport Pickup & Drop</h3>
+                                        <h3 class="text-white font-semibold truncate pr-2">Airport Pickup & Drop</h3>
                                     </div>
                                 </div>
-                                <div class="flex items-center justify-between mt-6 pt-4 border-t border-white/10">
-                                    <div class="flex gap-4 text-sm text-gray-400"><span
-                                            class="flex items-center gap-1.5"><iconify-icon
+                                <div class="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
+                                    <div class="flex gap-4 text-xs text-gray-500"><span
+                                            class="flex items-center gap-1"><iconify-icon
                                                 icon="solar:speedometer-linear"></iconify-icon> On Time</span><span
-                                            class="flex items-center gap-1.5"><iconify-icon
+                                            class="flex items-center gap-1"><iconify-icon
                                                 icon="solar:bolt-linear"></iconify-icon> Tracking</span></div><span
-                                        class="text-white font-bold text-lg">24x7</span>
+                                        class="text-white font-bold">24x7</span>
                                 </div>
                             </div>
                         </div>
@@ -585,224 +446,172 @@
                                     class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-dark-700/60 to-transparent pointer-events-none">
                                 </div>
                             </div>
-                            <div class="p-6 relative">
-                                <div class="flex justify-between items-start mb-3">
+                            <div class="p-5 relative">
+                                <div class="flex justify-between items-start mb-2">
                                     <div>
-                                        <p class="text-sm text-brand-500 font-bold uppercase tracking-wider mb-2">Travel
+                                        <p class="text-xs text-brand-500 font-bold uppercase tracking-wider mb-1">Travel
                                         </p>
-                                        <h3 class="text-white font-semibold text-lg leading-tight pr-2">Outstation Taxi</h3>
+                                        <h3 class="text-white font-semibold truncate pr-2">Outstation Taxi</h3>
                                     </div>
                                 </div>
-                                <div class="flex items-center justify-between mt-6 pt-4 border-t border-white/10">
-                                    <div class="flex gap-4 text-sm text-gray-400"><span
-                                            class="flex items-center gap-1.5"><iconify-icon
+                                <div class="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
+                                    <div class="flex gap-4 text-xs text-gray-500"><span
+                                            class="flex items-center gap-1"><iconify-icon
                                                 icon="solar:speedometer-linear"></iconify-icon> Long Trip</span><span
-                                            class="flex items-center gap-1.5"><iconify-icon
+                                            class="flex items-center gap-1"><iconify-icon
                                                 icon="solar:bolt-linear"></iconify-icon> Verified</span></div><span
-                                        class="text-white font-bold text-lg">All India</span>
+                                        class="text-white font-bold">All India</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </main>
-            <footer class="bg-dark-950 border-t border-dark-700 pt-20 pb-10">
-                <div class="max-w-7xl mx-auto px-6">
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
-                        <div class="md:col-span-2 text-center md:text-left">
-                            <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
-                                <div class="w-10 h-10 rounded-xl bg-brand-500 flex items-center justify-center text-white">
-                                    <iconify-icon icon="solar:wheel-angle-bold-duotone" width="24"></iconify-icon>
-                                </div>
-                                <span class="text-2xl font-bold text-white">SK TOUR<span class="text-gray-500"> TRAVELSS</span></span>
-                            </div>
-                            <p class="text-gray-400 text-base max-w-md mx-auto md:mx-0 leading-relaxed">V.P.O Panjawar, District Una, Himachal Pradesh,
+            <footer class="bg-dark-950 border-t border-dark-700 pt-16 pb-8">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                        <div class="col-span-2">
+                            <div class="flex items-center gap-2 mb-4"><span class="text-xl font-bold text-white">SK
+                                    TOUR<span class="text-gray-500"> TRAVELSS</span></span></div>
+                            <p class="text-gray-500 text-sm max-w-xs">V.P.O Panjawar, District Una, Himachal Pradesh,
                                 India. Your trusted partner for premium travel and taxi services.</p>
                         </div>
-                        <div class="text-center md:text-left">
-                            <h4 class="text-white font-semibold mb-6 text-lg">Services</h4>
-                            <ul class="space-y-3 text-gray-400 text-base">
-                                <li class="hover:text-white cursor-pointer transition-colors">Marriage Booking</li>
-                                <li class="hover:text-white cursor-pointer transition-colors">Airport Drop</li>
-                                <li class="hover:text-white cursor-pointer transition-colors">Local Taxi</li>
+                        <div>
+                            <h4 class="text-white font-semibold mb-4 text-sm">Services</h4>
+                            <ul class="space-y-2 text-gray-500 text-sm">
+                                <li class="hover:text-white cursor-pointer">Marriage Booking</li>
+                                <li class="hover:text-white cursor-pointer">Airport Drop</li>
+                                <li class="hover:text-white cursor-pointer">Local Taxi</li>
                             </ul>
                         </div>
-                        <div class="text-center md:text-left">
-                            <h4 class="text-white font-semibold mb-6 text-lg">Company</h4>
-                            <ul class="space-y-3 text-gray-400 text-base">
-                                <li class="hover:text-white cursor-pointer transition-colors">About Us</li>
-                                <li class="hover:text-white cursor-pointer transition-colors">Contact</li>
-                                <li class="hover:text-white cursor-pointer transition-colors">Location</li>
+                        <div>
+                            <h4 class="text-white font-semibold mb-4 text-sm">Company</h4>
+                            <ul class="space-y-2 text-gray-500 text-sm">
+                                <li class="hover:text-white cursor-pointer">About Us</li>
+                                <li class="hover:text-white cursor-pointer">Contact</li>
+                                <li class="hover:text-white cursor-pointer">Location</li>
                             </ul>
                         </div>
                     </div>
                     <div
-                        class="border-t border-dark-800 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-                        <p class="text-base text-gray-400">© 2026 SK TOUR TRAVELSS. All rights reserved.</p>
-                        <div class="flex gap-6">
-                            <iconify-icon icon="solar:camera-linear" width="24"
-                                class="hover:text-white cursor-pointer transition-colors text-gray-400"></iconify-icon>
-                            <iconify-icon icon="solar:plain-2-linear" width="24"
-                                class="hover:text-white cursor-pointer transition-colors text-gray-400"></iconify-icon>
-                        </div>
+                        class="border-t border-dark-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                        <p>© 2026 SK TOUR TRAVELSS.</p>
+                        <div class="flex gap-4 mt-4 md:mt-0"><iconify-icon icon="solar:camera-linear" width="20"
+                                class="hover:text-white cursor-pointer"></iconify-icon><iconify-icon
+                                icon="solar:plain-2-linear" width="20"
+                                class="hover:text-white cursor-pointer"></iconify-icon></div>
                     </div>
                 </div>
             </footer>
         </div>
-        
-        <!-- Floating WhatsApp Button -->
-        <button onclick="window.open('https://wa.me/919805018034', '_blank')" class="floating-whatsapp" title="Chat on WhatsApp">
-            <iconify-icon icon="logos:whatsapp-icon" width="32"></iconify-icon>
-        </button>
     </div>
 
     <script type="text/babel">
         const { useState, useEffect } = React;
 
-        // --- Phone Constants ---
-        const PHONE_NUMBERS = {
-            PRIMARY: '+91 9805018034',
-            SECONDARY: '+91 9816284516',
-            PRIMARY_TEL: 'tel:+919805018034',
-            SECONDARY_TEL: 'tel:+919816284516'
-        };
-
-        // --- Call Handler Function ---
-        const handleCallSupport = (phoneType = 'primary') => {
-            const telLink = phoneType === 'secondary' ? PHONE_NUMBERS.SECONDARY_TEL : PHONE_NUMBERS.PRIMARY_TEL;
-            
-            // Check if device supports tel: protocol (mobile detection)
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                window.location.href = telLink;
-            } else {
-                // Desktop fallback - copy number to clipboard and show alert
-                const phoneNumber = phoneType === 'secondary' ? PHONE_NUMBERS.SECONDARY : PHONE_NUMBERS.PRIMARY;
-                navigator.clipboard.writeText(phoneNumber).then(() => {
-                    alert(`Phone number ${phoneNumber} copied to clipboard!`);
-                }).catch(() => {
-                    alert(`Please call: ${phoneNumber}`);
-                });
-            }
-        };
-
-        // Expose function to global scope for vanilla JS onclick handlers
-        window.handleCallSupport = handleCallSupport;
-
         // --- Mock Data ---
-const CARS_DATA = [
-  {
-    id: 6,
-    name: "Traveller Tour & Travel",
-    price: "Tour",
-    type: "Traveller",
-    fuel: "AC",
-    hp: "Luxury Family",
-    speed: "Smooth & Safe",
-    image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771086159/WhatsApp_Image_2026-02-14_at_8.16.47_PM_tpd9ev.jpg"
-  },
+      const CARS_DATA = [
   {
     id: 1,
-    name: "Varna Car",
+    name: "Local Taxi Service",
     price: "Panjawar",
-    type: "Varna",
-    fuel: "Premium",
-    hp: "Decorated",
-    speed: "Luxury",
-    image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771085831/WhatsApp_Image_2026-02-14_at_8.16.51_PM_owsyit.jpg"
-  },
-  {
-    id: 9,
-    name: "Kia Carens Family Tour",
-    price: "Holiday",
-    type: "Kia Carens",
-    fuel: "AC",
-    hp: "Spacious",
-    speed: "Smooth",
-    image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771087129/WhatsApp_Image_2026-02-14_at_8.17.43_PM_au50sb.jpg"
-  },
-  {
-    id: 3,
-    name: "Traveller Airport Pickup",
-    price: "24x7",
-    type: "Traveller",
-    fuel: "Express",
-    hp: "On Time",
-    speed: "Reliable",
-    image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771086214/WhatsApp_Image_2026-02-14_at_8.16.48_PM_cpdhwg.jpg"
-  },
-  {
-    id: 11,
-    name: "Varna Marriage Car",
-    price: "Marriage",
-    type: "Varna",
-    fuel: "24/7",
-    hp: "Decorated",
-    speed: "Royal",
-    image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771170010/WhatsApp_Image_2026-02-14_at_8.16.51_PM_3_hy2qpc.jpg"
-  },
-  {
-    id: 5,
-    name: "Kia Carens",
-    price: "City Trips",
-    type: "Taxi",
+    type: "Local",
     fuel: "24/7",
     hp: "All Cars",
     speed: "Punctual",
-    image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771086165/WhatsApp_Image_2026-02-14_at_8.17.47_PM_i11haw.jpg"
-  },
-  {
-    id: 8,
-    name: "Kia Carens Front",
-    price: "City Ride",
-    type: "Taxi",
-    fuel: "24/7",
-    hp: "Premium Car",
-    speed: "Smooth",
-    image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771087135/WhatsApp_Image_2026-02-14_at_8.17.42_PM_ffphzf.jpg"
+    image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771085831/WhatsApp_Image_2026-02-14_at_8.16.51_PM_owsyit.jpg"
   },
   {
     id: 2,
-    name: "Traveller Service",
+    name: "Wedding Car Booking",
     price: "Marriage",
-    type: "Traveller",
+    type: "Wedding",
     fuel: "Premium",
     hp: "Decorated",
     speed: "Luxury",
     image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771086203/WhatsApp_Image_2026-02-14_at_8.16.49_PM_c0wnsh.jpg"
   },
   {
-    id: 7,
-    name: "Varna Wedding Special",
-    price: "Marriage",
-    type: "Varna",
-    fuel: "24/7",
-    hp: "Premium Decor",
-    speed: "Elegant Ride",
-    image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771170016/WhatsApp_Image_2026-02-14_at_8.16.50_PM_mp568n.jpg"
+    id: 3,
+    name: "Airport Pickup & Drop",
+    price: "24x7",
+    type: "Airport",
+    fuel: "Express",
+    hp: "On Time",
+    speed: "Reliable",
+    image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771086214/WhatsApp_Image_2026-02-14_at_8.16.48_PM_cpdhwg.jpg"
   },
   {
     id: 4,
-    name: "Traveller Outstation",
+    name: "Outstation Taxi",
     price: "India",
-    type: "Traveller",
+    type: "Outstation",
     fuel: "Long Trip",
     hp: "Clean",
     speed: "Comfort",
     image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771086190/WhatsApp_Image_2026-02-14_at_8.16.51_PM_2_erppcb.jpg"
   },
   {
+    id: 5,
+    name: "Corporate Cab Service",
+    price: "Office",
+    type: "Corporate",
+    fuel: "Daily",
+    hp: "Professional",
+    speed: "On Time",
+    image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771086165/WhatsApp_Image_2026-02-14_at_8.17.47_PM_i11haw.jpg"
+  },
+  {
+    id: 6,
+    name: "Tour & Travel",
+    price: "Tour",
+    type: "Travel",
+    fuel: "AC",
+    hp: "Family",
+    speed: "Safe",
+    image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771086159/WhatsApp_Image_2026-02-14_at_8.16.47_PM_tpd9ev.jpg"
+  },
+  {
+    id: 7,
+    name: "Luxury Tempo Traveller",
+    price: "Group",
+    type: "Traveller",
+    fuel: "AC",
+    hp: "12+ Seater",
+    speed: "Comfort",
+    image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771087143/WhatsApp_Image_2026-02-14_at_8.17.47_PM_dot0ai.jpg"
+  },
+  {
+    id: 8,
+    name: "Mini Bus Service",
+    price: "Trip",
+    type: "Mini Bus",
+    fuel: "AC/Non-AC",
+    hp: "20+ Seater",
+    speed: "Safe",
+    image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771087135/WhatsApp_Image_2026-02-14_at_8.17.42_PM_ffphzf.jpg"
+  },
+  {
+    id: 9,
+    name: "Family Tour Vehicle",
+    price: "Holiday",
+    type: "Family",
+    fuel: "AC",
+    hp: "Spacious",
+    speed: "Smooth",
+    image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771087129/WhatsApp_Image_2026-02-14_at_8.17.43_PM_au50sb.jpg"
+  },
+  {
     id: 10,
-    name: "Kia Carens Local Van",
+    name: "Local Van Service",
     price: "Daily",
-    type: "Kia Carens",
+    type: "Van",
     fuel: "Diesel",
     hp: "Economy",
     speed: "Reliable",
     image: "https://res.cloudinary.com/dvexzc7nv/image/upload/v1771087123/WhatsApp_Image_2026-02-14_at_8.17.43_PM_1_rvfzgl.jpg"
   }
 ];
-
-
 
 
 
@@ -972,7 +781,7 @@ const CARS_DATA = [
                         <div className="my-8 sm:my-12 px-4">
                             <div className="relative max-w-xs sm:max-w-sm mx-auto">
                                 <div className="absolute inset-0 bg-brand-500/20 blur-[60px] rounded-full"></div>
-                                <img src="https://res.cloudinary.com/dvexzc7nv/image/upload/v1771143432/ChatGPT_Image_Feb_15_2026_01_46_43_PM_vngkh9.png" alt="Hero Car" className="relative z-10 w-full animate-float drop-shadow-2xl" />
+                                <img src="https://pngimg.com/d/porsche_PNG10622.png" alt="Hero Car" className="relative z-10 w-full animate-float drop-shadow-2xl" />
                             </div>
                         </div>
 
@@ -1023,12 +832,12 @@ const CARS_DATA = [
                             </div>
 
                             <div className="pt-8 flex items-center gap-8 border-t border-gray-200 dark:border-white/5">
-                                <div className="cursor-pointer hover:scale-105 transition-transform" onClick={() => handleCallSupport('primary')}>
-                                    <p className="text-2xl font-bold text-gray-900 dark:text-white hover:text-brand-500 transition-colors">9805018034</p>
+                                <div>
+                                    <p className="text-2xl font-bold text-gray-900 dark:text-white">9805018034</p>
                                     <p className="text-xs text-gray-500 uppercase tracking-wider">Primary Contact</p>
                                 </div>
-                                <div className="cursor-pointer hover:scale-105 transition-transform" onClick={() => handleCallSupport('secondary')}>
-                                    <p className="text-2xl font-bold text-gray-900 dark:text-white hover:text-brand-500 transition-colors">9816284516</p>
+                                <div>
+                                    <p className="text-2xl font-bold text-gray-900 dark:text-white">9816284516</p>
                                     <p className="text-xs text-gray-500 uppercase tracking-wider">Secondary Contact</p>
                                 </div>
                             </div>
@@ -1094,15 +903,14 @@ const CARS_DATA = [
                     </div>
                     
                     <div className={`relative ${compact ? 'max-w-5xl' : 'max-w-6xl'} mx-auto`}>
-                        {/* Three Video Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                        {/* Two Video Grid */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
                             {/* Video 1 */}
                             <div className="relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden bg-gray-200 dark:bg-dark-800 border border-gray-300 dark:border-dark-700 shadow-2xl group hover:border-brand-500/30 transition-all duration-300">
                                 <video 
                                     className="w-full h-full object-cover"
                                     controls
                                     preload="metadata"
-                                    muted
                                     poster="https://res.cloudinary.com/dvexzc7nv/image/upload/v1771092224/WhatsApp_Image_2026-02-14_at_11.31.56_PM_dccbvw.jpg"
                                 >
                                     <source src="https://res.cloudinary.com/dvexzc7nv/video/upload/v1771089939/WhatsApp_Video_2026-02-14_at_8.24.37_PM_rz6ll0.mp4" type="video/mp4" />
@@ -1111,7 +919,7 @@ const CARS_DATA = [
                                     <div className="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-dark-800">
                                         <div className="text-center p-4 sm:p-6">
                                             <iconify-icon icon="solar:video-library-bold-duotone" width="32" className="sm:w-12 sm:h-12 text-brand-500 mb-2 sm:mb-3 mx-auto"></iconify-icon>
-                                            <h3 className="text-sm sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2 font-heading">Our Fleet</h3>
+                                            <h3 className="text-sm sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2 font-heading">Video 1</h3>
                                             <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">Loading video...</p>
                                         </div>
                                     </div>
@@ -1134,7 +942,6 @@ const CARS_DATA = [
                                     className="w-full h-full object-cover"
                                     controls
                                     preload="metadata"
-                                    muted
                                     poster="https://res.cloudinary.com/dvexzc7nv/image/upload/v1771091106/WhatsApp_Image_2026-02-14_at_11.13.25_PM_llglwc.jpg"
                                 >
                                     <source src="https://res.cloudinary.com/dvexzc7nv/video/upload/v1771089918/WhatsApp_Video_2026-02-14_at_8.22.20_PM_uusbc0.mp4" type="video/mp4" />
@@ -1143,38 +950,7 @@ const CARS_DATA = [
                                     <div className="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-dark-800">
                                         <div className="text-center p-4 sm:p-6">
                                             <iconify-icon icon="solar:video-library-bold-duotone" width="32" className="sm:w-12 sm:h-12 text-brand-500 mb-2 sm:mb-3 mx-auto"></iconify-icon>
-                                            <h3 className="text-sm sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2 font-heading">Our Services</h3>
-                                            <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">Loading video...</p>
-                                        </div>
-                                    </div>
-                                </video>
-                                
-                                {/* Gradient Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                                
-                                {/* Play Icon Overlay */}
-                                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
-                                    <div className="bg-brand-500/90 backdrop-blur-sm rounded-full p-3 sm:p-4 shadow-2xl transform scale-90 group-hover:scale-100 transition-transform duration-300">
-                                        <iconify-icon icon="solar:play-bold" width="20" className="sm:w-6 sm:h-6 text-white"></iconify-icon>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Video 3 - NEW */}
-                            <div className="relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden bg-gray-200 dark:bg-dark-800 border border-gray-300 dark:border-dark-700 shadow-2xl group hover:border-brand-500/30 transition-all duration-300 md:col-span-2 lg:col-span-1">
-                                <video 
-                                    className="w-full h-full object-cover"
-                                    controls
-                                    preload="metadata"
-                                    muted
-                                >
-                                    <source src="https://res.cloudinary.com/dvexzc7nv/video/upload/v1771141133/WhatsApp_Video_2026-02-15_at_11.19.14_AM_uniwlr.mp4" type="video/mp4" />
-                                    
-                                    {/* Fallback content */}
-                                    <div className="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-dark-800">
-                                        <div className="text-center p-4 sm:p-6">
-                                            <iconify-icon icon="solar:video-library-bold-duotone" width="32" className="sm:w-12 sm:h-12 text-brand-500 mb-2 sm:mb-3 mx-auto"></iconify-icon>
-                                            <h3 className="text-sm sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2 font-heading">Customer Experience</h3>
+                                            <h3 className="text-sm sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2 font-heading">Video 2</h3>
                                             <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">Loading video...</p>
                                         </div>
                                     </div>
@@ -1217,7 +993,7 @@ const CARS_DATA = [
                                         <iconify-icon icon="logos:whatsapp-icon" width="18"></iconify-icon>
                                         Book Your Ride
                                     </button>
-                                    <button onClick={() => handleCallSupport('primary')} className="px-6 py-3 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full font-semibold transition-all backdrop-blur-sm flex items-center justify-center gap-2">
+                                    <button onClick={() => window.open('tel:+919805018034')} className="px-6 py-3 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full font-semibold transition-all backdrop-blur-sm flex items-center justify-center gap-2">
                                         <iconify-icon icon="solar:phone-calling-linear" width="16"></iconify-icon>
                                         Call Now
                                     </button>
@@ -1233,20 +1009,8 @@ const CARS_DATA = [
             const [filter, setFilter] = useState('All');
             const [selectedCar, setSelectedCar] = useState(null);
 
-            // Generate categories dynamically from CARS_DATA types and sort alphabetically
-            const uniqueTypes = [...new Set(CARS_DATA.map(car => car.type))].sort();
-            const categories = ['All', ...uniqueTypes];
-            
-            // Filter and sort cars
-            let filteredCars = filter === 'All' ? CARS_DATA : CARS_DATA.filter(c => c.type === filter);
-            
-            // Sort filtered cars by type alphabetically, then by name
-            filteredCars = filteredCars.sort((a, b) => {
-                if (a.type === b.type) {
-                    return a.name.localeCompare(b.name);
-                }
-                return a.type.localeCompare(b.type);
-            });
+            const categories = ['All', 'Wedding', 'Local', 'Airport', 'Outstation'];
+            const filteredCars = filter === 'All' ? CARS_DATA : CARS_DATA.filter(c => c.type === filter);
 
             return (
                 <div className="min-h-screen py-16 sm:py-20 md:py-24 px-4 max-w-7xl mx-auto animate-slide-up">
@@ -1333,7 +1097,7 @@ const CARS_DATA = [
 
                                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                                         <button onClick={() => window.open('https://wa.me/919805018034', '_blank')} className="flex-1 px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white rounded-full text-sm font-semibold transition-all duration-300 shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:shadow-[0_0_30px_rgba(234,88,12,0.5)]">Book Now</button>
-                                        <button onClick={() => handleCallSupport('primary')} className="flex-1 px-6 py-3 bg-gray-100 hover:bg-gray-200 dark:bg-white/5 dark:hover:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-white/10 rounded-full text-sm font-semibold transition-all duration-300 backdrop-blur-sm">Call Support</button>
+                                        <button onClick={() => window.open('https://wa.me/919805018034', '_blank')} className="flex-1 px-6 py-3 bg-gray-100 hover:bg-gray-200 dark:bg-white/5 dark:hover:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-white/10 rounded-full text-sm font-semibold transition-all duration-300 backdrop-blur-sm">Call Support</button>
                                     </div>
                                 </div>
                             </>
@@ -1365,14 +1129,14 @@ const CARS_DATA = [
                                     <button onClick={() => window.open('https://wa.me/919805018034', '_blank')} className="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white rounded-full font-semibold transition-all duration-300 shadow-[0_0_20px_rgba(234,88,12,0.3)]">
                                         Book Now
                                     </button>
-                                    <button onClick={() => handleCallSupport('primary')} className="px-8 py-4 bg-gray-100 hover:bg-gray-200 dark:bg-white/5 dark:hover:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-white/10 rounded-full font-semibold transition-all backdrop-blur-sm">
+                                    <button onClick={() => window.open('https://wa.me/919805018034', '_blank')} className="px-8 py-4 bg-gray-100 hover:bg-gray-200 dark:bg-white/5 dark:hover:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-white/10 rounded-full font-semibold transition-all backdrop-blur-sm">
                                         Call Us
                                     </button>
                                 </div>
                             </div>
                             <div className="relative">
                                 <div className="absolute inset-0 bg-brand-500/20 blur-[100px] rounded-full"></div>
-                                <img src="https://res.cloudinary.com/dvexzc7nv/image/upload/v1771170541/WhatsApp_Image_2026-02-15_at_6.43.41_PM_new5oa.jpg" alt="About Us" className="relative z-10 w-full rounded-3xl shadow-2xl" />
+                                <img src="https://res.cloudinary.com/dvexzc7nv/image/upload/v1771091106/WhatsApp_Image_2026-02-14_at_11.13.25_PM_llglwc.jpg" alt="About Us" className="relative z-10 w-full rounded-3xl shadow-2xl" />
                             </div>
                         </div>
                     </div>
